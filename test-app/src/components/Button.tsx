@@ -1,4 +1,4 @@
-import React, {FC, ReactNode} from 'react'
+import React, {FC} from 'react'
 import styled from "styled-components";
 
 interface ButtnProps {
@@ -10,5 +10,5 @@ export const Button: FC<ButtnProps> = ({buttonName}) =>
 
 
 const StyledButton = styled.button`
-    border-radius: 3px;
+    border-radius: 20px;
 `;
