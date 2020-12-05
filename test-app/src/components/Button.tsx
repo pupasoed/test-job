@@ -10,5 +10,15 @@ export const Button: FC<ButtnProps> = ({buttonName}) =>
 
 
 const StyledButton = styled.button`
-    border-radius: 20px;
+    background: #E4163A;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    border: 0;
+    height: 40px;
 `;

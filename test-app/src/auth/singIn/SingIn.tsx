@@ -8,8 +8,8 @@ function SingIn() {
     return(
             <div>
                 {/*<h1>{title="SingIn"}</h1>*/}
-                <Input placeholder="Login" label="Login"/>
-                <Input placeholder="Password" label="Password"/>
+                <Input placeholder="Login" label="Login" inputType={"email"}/>
+                <Input placeholder="Password" label="Password" inputType={"password"}/>
                 <Button buttonName="Sign In"/>
                 <div>234234</div>
             </div>
