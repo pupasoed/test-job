@@ -10,6 +10,7 @@ export const Button: FC<ButtnProps> = ({buttonName}) =>
 
 
 const StyledButton = styled.button`
+    display: grid;
     background: #E4163A;
     border-radius: 4px;
     color: #FFFFFF;
@@ -21,4 +22,6 @@ const StyledButton = styled.button`
     text-align: center;
     border: 0;
     height: 40px;
+    width: 100%;
+    align-items: center
 `;

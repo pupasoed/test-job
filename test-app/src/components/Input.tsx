@@ -2,7 +2,6 @@ import React, {FC, ReactNode} from 'react'
 import styled from "styled-components";
 
 
-
 interface AuthLayoutProps {
     placeholder: string
     label?: string
@@ -12,10 +11,10 @@ interface AuthLayoutProps {
 
 const Input:FC<AuthLayoutProps> = ({label, placeholder, inputType}) => {
     return(
-        <div>
+        <InputWrapper>
             {label && <StyledLabel className="label">{label}</StyledLabel>}
             <StyledInput placeholder={placeholder} type = {inputType}/>
-        </div>
+        </InputWrapper>
     )
 };
 
@@ -39,3 +38,7 @@ const StyledLabel = styled.label`
     color: #707070;
     margin-bottom: 8px;
 `;
+
+const InputWrapper = styled.div`
+    display: grid;
+    `

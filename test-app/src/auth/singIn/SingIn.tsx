@@ -1,18 +1,17 @@
 import React from 'react'
 import Input from "../../components/Input"
 import {Button} from "../../components/Button"
-// import styled, { css } from 'styled-components'
 
+export function SingIn() {
+    const onSubmit = () => {}
 
-function SingIn() {
     return(
-            <div>
+            <form>
                 {/*<h1>{title="SingIn"}</h1>*/}
                 <Input placeholder="Login" label="Login" inputType={"email"}/>
                 <Input placeholder="Password" label="Password" inputType={"password"}/>
                 <Button buttonName="Sign In"/>
                 <div>234234</div>
-            </div>
+            </form>
     );
 }
-export default SingIn
