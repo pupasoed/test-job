@@ -1,6 +1,6 @@
 import React from 'react'
-import {SingIn} from "./singIn/SingIn";
-import {SingUp} from "./singUp/SingUp";
+import {SignIn} from "./singIn/SignIn";
+import {SignUp} from "./singUp/SignUp";
 // import { useForm } from "react-hook-form";
 
 
@@ -8,8 +8,8 @@ import {SingUp} from "./singUp/SingUp";
 export const Auth = () =>{
     return(
         <form>
-            <SingIn/>
-            <SingUp/>
+            <SignIn/>
+            <SignUp/>
         </form>
     )
 }

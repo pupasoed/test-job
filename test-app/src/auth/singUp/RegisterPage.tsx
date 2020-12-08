@@ -1,12 +1,12 @@
 import React from 'react'
 import {AuthLayout} from "../../layout/AuthLayout";
 import {ReactComponent as SignUpImage} from "../../assets/img/signUp.svg";
-import {SingUp} from "../singUp/SingUp";
+import {SignUp} from "./SignUp";
 
 export const Register = () =>{
     return (
-        <AuthLayout image={<SignUpImage/>} title="SingUp">
-            <SingUp/>
+        <AuthLayout image={<SignUpImage/>} title="Sign Up">
+            <SignUp/>
         </AuthLayout>
     )
 }

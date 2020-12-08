@@ -13,34 +13,55 @@ export const AuthLayout:FC<AuthLayoutProps> = ({image, title, children}) => {
             <FormLayout>
                 <FormTitle>{title}</FormTitle>
                 {children}
+
             </FormLayout>
-            <AuthImage>{image}</AuthImage>
+            <ImageWrapper>
+                <AuthImage>{image}</AuthImage>
+            </ImageWrapper>
         </StyledContainer>
     )
 };
 
 const StyledContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 1fr 1.38fr;
     height: 100vh;
+    
+    @media screen and (max-width: 1110px) {
+      grid-template-columns: 1fr;
+    }
+
 `;
 
 const AuthImage = styled.div`
+    display: block;
     margin: auto;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
 `;
 
 const FormLayout = styled.form`
     width: 366px;
     justify-self: center;
     align-self: center;
+    margin: 24px;
+    max-width: 366px;
+    width: -webkit-fill-available;
 `;
 
 const FormTitle = styled.h1`
     font-size: 36px;
     line-height: 49px;
-    margin-bottom: 32px;
-`
+    margin: 0 0 32px 0;
+    color: #344472;
+    font-style: normal;
+    font-weight: normal;
+    font-family: Avenir;
+`;
+
+const ImageWrapper = styled.div`
+    background: #F5FBFF;
+    display: flex;
+    
+        @media screen and (max-width: 1110px) {
+      display: none;
+    }
+`;

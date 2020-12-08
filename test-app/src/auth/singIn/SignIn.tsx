@@ -1,17 +1,17 @@
 import React from 'react'
 import Input from "../../components/Input"
-import {Button} from "../../components/Button"
+import { Button } from "../../components/Button"
+import { Links } from "../../components/Links";
 
-export function SingIn() {
+export function SignIn() {
     const onSubmit = () => {}
 
     return(
             <form>
-                {/*<h1>{title="SingIn"}</h1>*/}
                 <Input placeholder="Login" label="Login" inputType={"email"}/>
                 <Input placeholder="Password" label="Password" inputType={"password"}/>
                 <Button buttonName="Sign In"/>
-                <div>234234</div>
+                <Links labelName={"Not a member yet? "} linkText={"Sign up"} link={"/register"}/>
             </form>
     );
 }
