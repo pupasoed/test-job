@@ -13,7 +13,6 @@ export const AuthLayout:FC<AuthLayoutProps> = ({image, title, children}) => {
             <FormLayout>
                 <FormTitle>{title}</FormTitle>
                 {children}
-
             </FormLayout>
             <ImageWrapper>
                 <AuthImage>{image}</AuthImage>
@@ -54,7 +53,6 @@ const FormTitle = styled.h1`
     color: #344472;
     font-style: normal;
     font-weight: normal;
-    font-family: Avenir;
 `;
 
 const ImageWrapper = styled.div`

@@ -4,7 +4,7 @@ import {AuthRoutes} from "./routes/Routes"
 function App() {
   return (
     <div>
-            <AuthRoutes/>
+        <AuthRoutes/>
     </div>
   );
 }
