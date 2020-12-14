@@ -3,42 +3,63 @@ import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { Links } from "../../components/Links";
 import { useForm } from "react-hook-form";
-import {Simulate} from "react-dom/test-utils";
-// import * as Yup from 'yup'
-// import error = Simulate.error;
 
 
 export function SignIn() {
 
-    const onSubmit = (data) => {
-        alert(data)
+    const { register, handleSubmit, errors } = useForm({})
+
+    const onSubmit = (name) => {
+        console.log({name})
     }
 
-    // const { register, handleSubmit, errors } = useForm({
-    //      validationSchema: Yup.object({
-    //         login: Yup.string().max(14, 'Login has max 14 simbol').required('Required'),
-    //         password: Yup.string().min(6, 'Password has max 14 simbol').required('Required')
-    //     })
-    // });
-
     return(
-            <div
-                // onSubmit={handleSubmit(onSubmit)}
-            >
-                <Input name="Login"
-                       // register={register({required: true, minLength: 6, maxLength: 10})}
-                       placeholder="Login"
-                       label="Login"
-                       inputType={"login"}
-                       // error={errors.Login}
+            <form onSubmit={handleSubmit(onSubmit)} >
+                <Input
+                    name="login"
+                    register={register({
+                        required: {
+                            value: true,
+                            message: 'This field is required',
+                        },
+                        maxLength: {
+                            value: 15,
+                            message: 'This input exceed maxLength.',
+                        },
+                        minLength: {
+                            value: 6,
+                            message: 'This input exceed minLength.',
+                        }
+                        })}
+
+                    placeholder="Login"
+                    label="Login"
+                    inputType={"login"}
+                    error={errors.login}
                 />
-                <Input name="password"
-                       // register={register({required: true, minLength: 6, maxLength: 10})}
-                       placeholder="Password"
-                       label="Password"
-                       inputType={"password"}/>
+                <Input
+                    name="password"
+                    register={register({
+                        required: {
+                            value: true,
+                            message: 'This field is required',
+                        },
+                        maxLength: {
+                            value: 15,
+                            message: 'This input exceed maxLength.',
+                        },
+                        minLength: {
+                            value: 6,
+                            message: 'This input exceed minLength.',
+                        }
+                    })}
+                    placeholder="Password"
+                    label="Password"
+                    inputType={"password"}
+                    error={errors.password}
+                />
                 <Button buttonName="Sign In"/>
                 <Links labelName={"Not a member yet? "} linkText={"Sign up"} link={"/register"}/>
-            </div>
+            </form>
     );
 }

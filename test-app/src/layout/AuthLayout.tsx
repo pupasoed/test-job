@@ -37,7 +37,7 @@ const AuthImage = styled.div`
     margin: auto;
 `;
 
-const FormLayout = styled.form`
+const FormLayout = styled.div`
     width: 366px;
     justify-self: center;
     align-self: center;

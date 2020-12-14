@@ -1,29 +1,29 @@
-import React, {FC, InputHTMLAttributes, ReactNode} from 'react'
+import React, {FC, ReactNode} from 'react'
 import styled from "styled-components";
 import {ReactComponent as EyeIcon} from "../assets/img/eye.svg";
+import {FieldError, UseFormMethods} from "react-hook-form";
 
-// import { UseFormMethods } from "react-hook-form";
 
-interface AuthLayoutProps
-    extends InputHTMLAttributes<HTMLInputElement> {
+interface AuthLayoutProps{
     placeholder?: string;
     label?: string;
     icon?: ReactNode;
     inputType: "email" | "password" | "login";
     name?: string;
     register?: any;
-    errors?: any;
+    error?: FieldError;
 }
 
 export const Input: FC<AuthLayoutProps> = ({
                                                label,
                                                placeholder,
                                                inputType,
-                                               errors = {},
+                                               error,
                                                name,
                                                register,
                                                ...inputProps
                                            }) => {
+
     return (
         <InputWrapper>
             {label && <StyledLabel className="label">{label}</StyledLabel>}
@@ -32,30 +32,31 @@ export const Input: FC<AuthLayoutProps> = ({
                 type={inputType}
                 ref={register}
                 name={name}
-                {...inputProps}/>
-            {/*{error && (<p> {error} </p> )}*/}
-            {/*{<Eye>EyeIcon</Eye>}*/}
+                error={error}
+                {...inputProps}
+            />
+            <ErrorMassage> {error?.message} </ErrorMassage>
             <Eye/>
         </InputWrapper>
     )
-};
+}
 
 
-const StyledInput = styled.input`
+const StyledInput = styled.input <{error: FieldError}>`
   font-family: Avenir;
   background: #F6F6F6;
   border-radius: 4px;
   height: 40px;
-  margin-bottom: 24px;
-  border: aliceblue;
+  border-width: 1px;
+  border-color: ${props => props.error ? '#FF768E' : 'aliceblue'};
+  border-style: solid;
   padding-left: 10px;
+  //border: 1px solid #FF768E;
 
   &:focus {
     outline: none;
     box-shadow: 0 0 5px #D9D9D9;
-  }
-
-`;
+  }`;
 
 const StyledLabel = styled.label`
   font-style: normal;
@@ -68,9 +69,19 @@ const StyledLabel = styled.label`
 
 const InputWrapper = styled.div`
   display: grid;
+  margin-bottom: 24px;
 `;
 
 const Eye = styled.a`
   display: flex;
   background: url(../assets/img/eye.svg) no-repeat scroll 7px 7px;
+`
+
+const ErrorMassage = styled.div`
+  margin: 0;
+  color: #FF768E;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
 `
