@@ -1,8 +1,9 @@
-import React, {FC, ReactNode} from 'react'
+import React, {FC, InputHTMLAttributes, ReactNode} from 'react'
 import styled from "styled-components";
 import {ReactComponent as EyeIcon} from "../assets/img/eye.svg";
 import {FieldError, UseFormMethods} from "react-hook-form";
-
+// import {Simulate} from "react-dom/test-utils";
+// import error = Simulate.error;
 
 interface AuthLayoutProps{
     placeholder?: string;
