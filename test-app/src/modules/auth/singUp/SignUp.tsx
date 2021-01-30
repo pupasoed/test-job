@@ -1,8 +1,8 @@
 import React from 'react'
-import { Input } from "../../components/Input"
-import { Button } from "../../components/Button"
-import { Links } from "../../components/Links";
-import { Checkbox } from "../../components/Checkbox";
+import { Input } from "../../../components/ui/Input"
+import { Button } from "../../../components/ui/Button"
+import { Links } from "../../../components/ui/Links";
+import { Checkbox } from "../../../components/ui/Checkbox";
 import { useForm } from "react-hook-form";
 
 

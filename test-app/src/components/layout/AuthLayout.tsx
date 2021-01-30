@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface AuthLayoutProps {
     image: ReactNode,
-    title?:string
+    title?: string
 }
 
 export const AuthLayout:FC<AuthLayoutProps> = ({image, title, children}) => {

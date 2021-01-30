@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {AuthRoutes} from "../../routes/Routes"
-import {Provider} from 'react-redux'
-import {store} from "../../store";
+import {loginActions} from '../../modules/auth/singIn/singInSlice'
+import {useDispatch} from 'react-redux'
 
 
 function App() {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(loginActions.returnToken())
+    }, [dispatch])
+
     return (
-        <Provider store={store}>
             <AuthRoutes/>
-        </Provider>
     );
 }
 

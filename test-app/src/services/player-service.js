@@ -4,18 +4,18 @@ export const getPlayers = () => {
     const data = [
         {
             id: 1,
-            playerName: 'Jon',
-            playerAge: 45
+            name: 'Jon',
+            age: 45
         },
         {
             id: 2,
-            playerName: 'Jon1',
-            playerAge: 30
+            name: 'Jon1',
+            age: 30
         }
     ]
 
     return new Promise((resolve, reject) => {
-        console.log('PromiseService')
+        // console.log('PromiseService')
         if(data){
             resolve(data)
         }else{

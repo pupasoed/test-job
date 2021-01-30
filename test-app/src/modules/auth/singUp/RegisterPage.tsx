@@ -1,6 +1,6 @@
 import React from 'react'
-import {AuthLayout} from "../../layout/AuthLayout";
-import {ReactComponent as SignUpImage} from "../../assets/img/signUp.svg";
+import {AuthLayout} from "../../../components/layout/AuthLayout";
+import {ReactComponent as SignUpImage} from "../../../assets/img/signUp.svg";
 import {SignUp} from "./SignUp";
 
 export const Register = () =>{

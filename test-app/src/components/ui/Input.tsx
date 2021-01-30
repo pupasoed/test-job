@@ -1,9 +1,6 @@
-import React, {FC, InputHTMLAttributes, ReactNode} from 'react'
+import React, {FC, ReactNode} from 'react'
 import styled from "styled-components";
-import {ReactComponent as EyeIcon} from "../assets/img/eye.svg";
-import {FieldError, UseFormMethods} from "react-hook-form";
-// import {Simulate} from "react-dom/test-utils";
-// import error = Simulate.error;
+import {FieldError} from "react-hook-form";
 
 interface AuthLayoutProps{
     placeholder?: string;
@@ -52,7 +49,6 @@ const StyledInput = styled.input <{error: FieldError}>`
   border-color: ${props => props.error ? '#FF768E' : 'aliceblue'};
   border-style: solid;
   padding-left: 10px;
-  //border: 1px solid #FF768E;
 
   &:focus {
     outline: none;
@@ -75,7 +71,7 @@ const InputWrapper = styled.div`
 
 const Eye = styled.a`
   display: flex;
-  background: url(../assets/img/eye.svg) no-repeat scroll 7px 7px;
+  background: url(../../assets/img/eye.svg) no-repeat scroll 7px 7px;
 `
 
 const ErrorMassage = styled.div`
