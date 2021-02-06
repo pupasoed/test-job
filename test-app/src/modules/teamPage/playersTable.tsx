@@ -1,44 +1,58 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 export const PlayersTable = () => {
+
+    const items = [
+        {
+            id: 1,
+            name: 'Jon Bol',
+            position: 'Centerforward',
+            height: 319,
+            weight: 100,
+            age: 45
+        },
+        {
+            id: 2,
+            name: 'Jon1',
+            position: 'Centerforward',
+            height: 319,
+            weight: 100,
+            age: 30
+        }
+    ]
+
+    const renderRow = (item) => {
+        const { id, name, position, height, weight, age } = item
+        return (
+            <Tr>
+                <Td width={'80px'} textAlign={'center'}>{id}</Td>
+                <Td textAlign={'left'}>
+                    <div className={'color: red;'} >{name}</div>
+                    <div>{position}</div>
+                </Td>
+                <TdLeft width={'120px'} textAlign={'left'}>{`${height} cm`}</TdLeft>
+                <TdLeft width={'120px'} textAlign={'left'}>{`${weight} kg`}</TdLeft>
+                <TdLeft width={'60px'} textAlign={'left'}>{age}</TdLeft>
+            </Tr>
+        )
+    }
+
     return (
         <TableWrapper>
-            <Table>
+            <Table >
                 <Caption><TableTitle>Roster</TableTitle></Caption>
                 <thead>
                 <Tr>
-                    <th>id</th>
-                    <th>Player</th>
-                    <th>Height</th>
-                    <th>Weight</th>
-                    <th>Age</th>
+                    <Th width={'80px'} textAlign={'center'}>#</Th>
+                    <Th textAlign={'left'}>Player</Th>
+                    <ThLeft width={'120px'} textAlign={'left'}>Height</ThLeft>
+                    <ThLeft width={'120px'} textAlign={'left'}>Weight</ThLeft>
+                    <ThLeft width={'60px'} textAlign={'left'}>Age</ThLeft>
                 </Tr>
                 </thead>
                 <tbody>
-                <Tr>
-                    <Td>1</Td>
-                    <Td>
-                        <div>Artyr Covid</div>
-                        <div>Bol Bol Centerforward</div>
-
-                    </Td>
-                    <Td>218 cm</Td>
-                    <Td>100 kg</Td>
-                    <Td>49</Td>
-                </Tr>
-                <Tr>
-                    <Td>1</Td>
-                    <Td>
-                        <div>Artyr Covid</div>
-                        <div>Bol Bol Centerforward</div>
-
-                    </Td>
-                    <Td>218 cm</Td>
-                    <Td>100 kg</Td>
-                    <Td>49</Td>
-                </Tr>
-
+                { items.map(renderRow) }
                 </tbody>
             </Table>
         </TableWrapper>
@@ -46,16 +60,16 @@ export const PlayersTable = () => {
     );
 }
 const Caption = styled.caption`
-  border-bottom: 1px solid #9C9C9C;
   text-align: inherit;
-  height: 40px;
+  height: 33px;
+  margin-top: 8px;
 `
 
 const TableWrapper = styled.div`
   width: 100%;
   margin-top: 24px;
   background: #ffffff;
-  border: 1px solid #9C9C9C;
+  border: 0.5px solid #9C9C9C;
   box-sizing: border-box;
   border-radius: 10px 10px 10px 10px;
 `
@@ -75,14 +89,32 @@ const TableTitle = styled.span`
 `
 
 const Tr = styled.tr`
-  border-bottom: 1px solid #9C9C9C;
+  box-shadow: 0px -0.5px 0px #9c9c9c;
   box-sizing: border-box;
   color: #707070;
 `
 
 const Td = styled.td`
-  width: 56px;
-  text-align: center;
-  border-bottom: 0.5px solid #9C9C9C;
+  height: 56px;
   box-sizing: border-box;
+  width: ${props => props.width };
+  text-align: ${props=> props.textAlign};
+`
+
+const Th = styled.th`
+  height: 40px;
+  width: ${props => props.width };
+  text-align: ${props=> props.textAlign};
+`
+
+const ThLeft = styled(Th)`
+@media screen and (max-width: 1110px){
+  display: none;
+}
+`
+
+const TdLeft = styled(Td)`
+@media screen and (max-width: 1110px){
+  display: none;
+}
 `

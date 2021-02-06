@@ -1,17 +1,16 @@
 import React, {useEffect} from 'react'
 import {AppLayout} from "../../components/layout/AppLayout";
-// import styled from 'styled-components'
 import {AppListItem} from "../../components/ui/appListItem";
 import {useDispatch} from 'react-redux'
 import {getTeamsAction} from "./teamsAction";
 import {RootState} from "../../reducers";
 import {useSelector} from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 
-export const TeamsPage = () => {
+const TeamsPage = ( {history} ) => {
 
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getTeamsAction())
     }, [dispatch])
@@ -21,9 +20,15 @@ export const TeamsPage = () => {
         <AppLayout>
             {
                 teams.map((teams) => {
-                    return <AppListItem items={teams}/>
+                    return <AppListItem items={teams}
+                    Oncklic={()=>{
+                        history.push(`/teams/${teams.id}`)
+                    }}
+                    />
                 })
             }
         </AppLayout>
     )
 }
+
+export default withRouter(TeamsPage)

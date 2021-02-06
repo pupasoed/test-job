@@ -1,12 +1,11 @@
 import React, {useEffect} from 'react'
 import {getPlayersAction} from './playersActions'
-import {getTeamsAction} from "../teams/teamsAction";
-
+import { withRouter } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from "../../reducers";
-import {store} from "../../store";
-import {AppLayout} from "../../components/layout/AppLayout";
-import {AppListItem} from "../../components/ui/appListItem";
+import { RootState } from '../../reducers';
+import {AppLayout} from '../../components/layout/AppLayout';
+import {AppListItem} from '../../components/ui/appListItem';
+
 
 // const getData = (dispatch) => {
 //     dispatch(getPlayersAction());
@@ -19,44 +18,27 @@ import {AppListItem} from "../../components/ui/appListItem";
 //     console.log(items)
 //
 //     // store.subscribe(() => console.log(store.getState()))
-//     return (
-//         <AppLayout>
-//             {
-//                 items.map((items) => {
-//                     return <AppItem items={items}/>
-//                 })
-//             }
-//
-//             {/*<div>*/}
-//             {/*    <button onClick={() => {*/}
-//             {/*        getData(dispatch);*/}
-//             {/*    }}>*/}
-//             {/*        Test*/}
-//             {/*    </button>*/}
-//             {/*</div>*/}
-//         </AppLayout>
-//     )
-// }
 
-
-
-
-export const PlayersPage = () => {
+const PlayersPage = ({history}) => {
 
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getPlayersAction())
     }, [dispatch])
     const {players} = useSelector((state: RootState) => state.players)
-    // console.log(players)
+
     return (
         <AppLayout>
             {
                 players.map((players) => {
-                    return <AppListItem items={players}/>
+                    return <AppListItem items={players}
+                    // Oncklic={PlayerDetails}/>
+                    Oncklic={() => {history.push(`players/${players.id}`)}}
+                    />
                 })
             }
         </AppLayout>
     )
 }
+
+export default withRouter(PlayersPage)

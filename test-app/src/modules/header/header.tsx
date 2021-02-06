@@ -1,19 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import {ReactComponent as LogoHeader} from "../../assets/img/logo.svg";
-import {MenuButton} from "../menu/menuButton";
 import {UserInfo} from "./userInfo";
-import {MenuItem} from "../../components/ui/menuItem";
+import {MenuLinks} from "../../components/ui/menuLinks";
 
 export const Header = () => {
     return(
         <HeaderContainer>
             <Wrapper>
-                <MenuButton/>
                 <LogoHeaderWrapper>
-                    <MenuItem link={"/teams"} type={"header"}>
-                        <LogoHeader/>
-                    </MenuItem>
+                    <MenuLinks link={"/teams"} type={"header"}>
+                        <CustomSVG />
+                    </MenuLinks>
                 </LogoHeaderWrapper>
                 <UserInfoWrapper>
                     <UserInfo/>
@@ -24,10 +22,19 @@ export const Header = () => {
     )
 };
 
+const CustomSVG = styled(LogoHeader)`
+  @media screen and (max-width: 1110px) {
+    width: 137px;
+  }
+`;
+
 const HeaderContainer = styled.div`
   background-color: #FFFFFF;
   height: 80px;
   width: 100%;
+  @media screen and (max-width: 1110px){
+    height: 62px;
+  }
 `
 
 const Wrapper = styled.div`
@@ -36,6 +43,10 @@ const Wrapper = styled.div`
   position: absolute;
   width: 100%;
   box-shadow: 0 1px 10px rgba(209, 209, 209, 0.5);
+  @media screen and (max-width: 1110px){
+    position: initial;
+    padding: 7px 0 7px 0;
+  }
 `
 
 const LogoHeaderWrapper = styled.div`

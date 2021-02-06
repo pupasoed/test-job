@@ -8,28 +8,32 @@ interface User {
     avatarUrl: string | null
 }
 interface AuthState {
-    user: User | null | undefined,
-    loading: boolean
+    user: User | null;
+    loading: boolean;
 }
 
 const initialState: AuthState = {
-    user: undefined,
-    loading: false
+    user: localStorage.user || null,
+    loading: false,
 }
 
 export const loginSlice = createSlice({
     name: "logInSlice",
     initialState: initialState,
     reducers: {
-        returnToken(state) {
+        // returnToken(state) {
             // const localStorageUser = localStorage.getItem('user')
             // console.log(localStorageUser)
             // if (localStorageUser) {
             //     state.user = JSON.parse(localStorageUser)
             //     console.log(state.user)
             // }
-            state.user = GetToken()
-            console.log(state.user)
+            // state.user = GetToken()
+            // console.log(state.user)
+        // },
+        logout(state) {
+            state.user = null
+            localStorage.clear()
         }
     },
     extraReducers: (builder) => {
@@ -38,8 +42,9 @@ export const loginSlice = createSlice({
         })
         builder.addCase(loginRequested.fulfilled, (state, action) => {
             state.user = action.payload
-            localStorage.setItem('user', JSON.stringify(state.user))
-            console.log(state.user)
+            localStorage.setItem('user', JSON.stringify(state.user));
+
+            // console.log(state.user)
         })
         builder.addCase(loginRequested.rejected, (state, action) => {
             state.user = null

@@ -5,10 +5,10 @@ import {useDispatch} from 'react-redux'
 
 
 function App() {
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(loginActions.returnToken())
-    }, [dispatch])
+    // const dispatch = useDispatch()
+    // useEffect(() => {
+    //     dispatch(loginActions.returnToken())
+    // }, [dispatch])
 
     return (
             <AuthRoutes/>

@@ -1,14 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { ReactComponent as MenuIcon } from "../../assets/img/menuIcom.svg";
 import styled from "styled-components";
 
-
-export const MenuButton = () => {
-    const [menu, setMenu] = useState(false)
-    const menuToggle = () => setMenu(!menu)
+export const MenuButton = ({menuHandler}) => {
 
     return(
-        <MenuButtonWrapper onClick={menuToggle} visibal={menu} >
+        <MenuButtonWrapper onClick={menuHandler}>
             <MenuIcon/>
         </MenuButtonWrapper>
     )
@@ -16,9 +13,11 @@ export const MenuButton = () => {
 
 const MenuButtonWrapper = styled.i`
   padding-left: 12px;
+  top: 20px;
   align-self: center;
   display: ${props => props.visibal ? 'none' : 'flex'};
-  
+  position: absolute;
+
   @media screen and (min-width: 1110px) {
     display: none;
   }

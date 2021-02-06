@@ -7,7 +7,9 @@ export const TeamPage = () => {
     return(
         <AppLayout>
             <Header/>
-            <TeamCart></TeamCart>
+            <TeamCart>
+
+            </TeamCart>
             <PlayersTable/>
         </AppLayout>
     )
@@ -27,4 +29,9 @@ const TeamCart = styled.div`
   width: 100%;
   background: linear-gradient(96deg, #707070 0%, #393939 100.28%);
   border-radius: 0 0 10px 10px;
+`
+
+const PhotoContainer = styled.div`
+  width: 502px;
+  
 `

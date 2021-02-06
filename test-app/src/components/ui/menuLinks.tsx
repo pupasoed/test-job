@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 
 
-interface MenuItemInterface {
+interface MenuLinksInterface {
     link: string;
     text?: string;
     children?: any;
     type?: string
 }
 
-export const MenuItem:FC<MenuItemInterface> = ({text, link, type, children}) => {
+export const MenuLinks:FC<MenuLinksInterface> = ({text, link, type, children}) => {
     return(
         <Link to={link}>
             <ItemWrapper type={type}>

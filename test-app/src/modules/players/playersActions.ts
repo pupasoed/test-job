@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import {getPlayers} from "../../services/player-service";
+import {getPlayers} from "../../services/players-service";
 
 
 
