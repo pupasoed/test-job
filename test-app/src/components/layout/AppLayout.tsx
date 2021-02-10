@@ -15,11 +15,11 @@ export const AppLayout:FC<IProps> = ({ children}) => {
             <Header/>
             <BodyContainer>
                 <Menu/>
-                <ListItemConteiner>
-                    <ListItem>
+                <ListItemContainer>
+                    {/*<ListItem>*/}
                         {children}
-                    </ListItem>
-                </ListItemConteiner>
+                    {/*</ListItem>*/}
+                </ListItemContainer>
             </BodyContainer>
         </AppLayoutWrapper>
     )
@@ -36,16 +36,9 @@ const BodyContainer = styled.div`
   display: flex;
   height: 100%;
 `
-const ListItemConteiner = styled.div`
+const ListItemContainer = styled.div`
   background-color: #F6F6F6;
   width: 100%;
-`
-const ListItem = styled.div`
-  margin: 32px 80px;
-  display: flex;
-  flex-wrap: wrap;
-  @media screen and (max-width: 1110px){
-    margin: 16px 12px;
-    //justify-content: center;
-  }
+  display: block;
+  overflow: scroll;
 `

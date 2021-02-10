@@ -72,6 +72,11 @@ const TableWrapper = styled.div`
   border: 0.5px solid #9C9C9C;
   box-sizing: border-box;
   border-radius: 10px 10px 10px 10px;
+  @media screen and (max-width: 1110px) {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
 `
 
 const Table = styled.table`
@@ -86,6 +91,9 @@ const TableTitle = styled.span`
   color: #707070;
   width: 40px;
   margin: 14px 32px;
+  @media screen and (max-width: 1110px) {
+    margin: 12px 16px;
+  }
 `
 
 const Tr = styled.tr`

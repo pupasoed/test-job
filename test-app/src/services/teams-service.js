@@ -21,6 +21,21 @@ export const getTeams = () => {
             id: 4,
             name: 'Portland trail blazers4',
             age: 1975
+        },
+        {
+            id: 4,
+            name: 'Portland trail blazers4',
+            age: 1975
+        },
+        {
+            id: 4,
+            name: 'Portland trail blazers4',
+            age: 1975
+        },
+        {
+            id: 4,
+            name: 'Portland trail blazers4',
+            age: 1975
         }
     ];
     return new Promise((resolve, reject) => {

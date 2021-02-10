@@ -1,11 +1,11 @@
 import React, {FC} from 'react'
 import styled from "styled-components";
 
-interface ButtnProps {
+interface ButtonProps {
     buttonName: string
 }
 
-export const Button: FC<ButtnProps> = ({buttonName}) =>
+export const Button: FC<ButtonProps> = ({buttonName}) =>
     <StyledButton>{buttonName}</StyledButton>;
 
 
@@ -23,12 +23,13 @@ const StyledButton = styled.button`
   height: 40px;
   width: 100%;
   align-items: center;
-  margin: 14px 0 32px 0;
 
+  &:Hover {
+    background: #FF5761;
+  }
   &:active {
     background: #C60E2E;
   }
-
   &:focus {
     outline: none;
   }

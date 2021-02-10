@@ -4,6 +4,7 @@ import { Button } from "../../../components/ui/Button"
 import { Links } from "../../../components/ui/Links";
 import { Checkbox } from "../../../components/ui/Checkbox";
 import { useForm } from "react-hook-form";
+import styled from 'styled-components'
 
 
 export function SignUp() {
@@ -97,8 +98,14 @@ export function SignUp() {
                 name={"confirmPassword"}
             />
             <Checkbox label="I accept the agreement" />
-            <Button buttonName="Sign Up"/>
+            <ButtonWrapper>
+                <Button buttonName="Sign Up"/>
+            </ButtonWrapper>
             <Links labelName={"Already a member? "} linkText={"Sign in"} link={"/login"}/>
         </form>
     );
 }
+
+const ButtonWrapper = styled.div`
+  margin: 24px 0;
+`

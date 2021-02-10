@@ -29,7 +29,6 @@ const StyledContainer = styled.div`
     @media screen and (max-width: 1110px) {
       grid-template-columns: 1fr;
     }
-
 `;
 
 const AuthImage = styled.div`

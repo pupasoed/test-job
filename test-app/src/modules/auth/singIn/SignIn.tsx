@@ -5,6 +5,7 @@ import { Links } from "../../../components/ui/Links";
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux'
 import { loginRequested } from "./singInActions";
+import styled from 'styled-components'
 
 
 export function SignIn() {
@@ -65,8 +66,14 @@ export function SignIn() {
                 inputType={"password"}
                 error={errors.password}
             />
-            <Button buttonName="Sign In"/>
+            <ButtonWrapper>
+                <Button buttonName="Sign In"/>
+            </ButtonWrapper>
             <Links labelName={"Not a member yet? "} linkText={"Sign up"} link={"/register"}/>
         </form>
     );
 }
+
+const ButtonWrapper = styled.div`
+  margin: 24px 0;
+`

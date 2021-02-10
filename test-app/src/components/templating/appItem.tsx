@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const AppListItem = ({items, Oncklic}) => {
+export const AppItem = ({items, itemClickHandler}) => {
     const {id, name, age} = items
     return(
-        <Item onClick={Oncklic}>
+        <Item onClick={()=>itemClickHandler(id)}>
             <ItemFooter>
                 <ItemName>{name}</ItemName>
                 <ItemAge>Year of foundation: {age}</ItemAge>
@@ -16,16 +16,10 @@ export const AppListItem = ({items, Oncklic}) => {
 const Item = styled.div`
   background: linear-gradient(121.57deg, #707070 1.62%, #393939 81.02%);
   border-radius: 4px;
-  min-width: 364px;
   height: 380px;
   position: relative;
-  margin-right: 24px;
-  margin-bottom: 24px;
   @media screen and (max-width: 1110px) {
     height: 180px;
-    min-width: 170px;
-    margin-right: 12px;
-    margin-bottom: 12px;
   }
 `
 
