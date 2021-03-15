@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import {Header} from "../../modules/header/header";
-import {Menu} from "../../modules/menu/menu";
+import Menu from "../../modules/menu/menu";
 import styled from 'styled-components'
 
 

@@ -1,6 +1,7 @@
 import React, {FC} from 'react'
 import styled from "styled-components";
 import {Button} from "../ui/Button";
+import ButtonAddItem from "../../modules/templaitingModules/buttonAddItem";
 
 interface iProps {
     title: string;
@@ -21,7 +22,8 @@ export const EmptyTeamsList:FC<iProps> = ({title, textForm, image}) => {
                 <Text>{textForm}</Text>
             </TextWrapper>
             <ButtonWrapper>
-                <ButtonStyled buttonName={'Add +'}/>
+                <ButtonAddItem/>
+                {/*<ButtonStyled buttonName={'Add +'}/>*/}
             </ButtonWrapper>
         </EmptyTeamsListContainer>
     )

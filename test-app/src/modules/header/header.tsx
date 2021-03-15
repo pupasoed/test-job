@@ -35,7 +35,7 @@ const HeaderContainer = styled.div`
   @media screen and (max-width: 1110px){
     height: 62px;
   }
-`
+`;
 
 const Wrapper = styled.div`
   padding: 16px 0 16px 0;
@@ -47,7 +47,7 @@ const Wrapper = styled.div`
     position: initial;
     padding: 7px 0 7px 0;
   }
-`
+`;
 
 const LogoHeaderWrapper = styled.div`
   padding-left: 51px;
@@ -58,11 +58,11 @@ const LogoHeaderWrapper = styled.div`
     padding-left: 0;
     padding-right: 36px;
   }
-`
+`;
 
 const MenuContainer = styled.div`
   background-color: antiquewhite;
-`
+`;
 
 const UserInfoWrapper = styled.div`
   margin-left: auto;
@@ -70,4 +70,4 @@ const UserInfoWrapper = styled.div`
   @media screen and (max-width: 1110px) {
     display: none;
   }
-`
+`;

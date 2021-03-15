@@ -5,9 +5,9 @@ import {RootState} from "../../reducers";
 import { useSelector } from 'react-redux';
 
 
-
 export const UserInfo = () => {
     const userName = useSelector((state: RootState) => state.loginReducer.user?.name)
+    console.log(userName)
     return(
         <UserInfoContainer>
             <LeftUserNameWrapper>

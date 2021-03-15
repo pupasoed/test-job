@@ -5,14 +5,19 @@ import { Links } from "../../../components/ui/Links";
 import { Checkbox } from "../../../components/ui/Checkbox";
 import { useForm } from "react-hook-form";
 import styled from 'styled-components'
+import {singUpRequested} from "./singUpAction";
+import { useDispatch } from 'react-redux'
+
 
 
 export function SignUp() {
 
     const { register, handleSubmit, errors } = useForm({})
 
-    const onSubmit = (name) => {
-        console.log(name);
+    const dispatch = useDispatch()
+    const onSubmit = (data) => {
+        console.log(data);
+        dispatch(singUpRequested(data))
     }
 
     return(
@@ -35,7 +40,7 @@ export function SignUp() {
                    placeholder="Name"
                    label="Name"
                    inputType={"login"}
-                   name={"name"}
+                   name={"userName"}
             />
             <Input
                 register={register({
@@ -77,26 +82,26 @@ export function SignUp() {
                 inputType={"password"}
                 name={"password"}
             />
-            <Input
-                register={register({
-                    required: {
-                        value: true,
-                        message: 'This field is required',
-                    },
-                    maxLength: {
-                        value: 15,
-                        message: 'This input exceed maxLength.',
-                    },
-                    minLength: {
-                        value: 2,
-                        message: 'This input exceed minLength.',
-                    }
-                })}
-                placeholder="Confirm password"
-                label="Enter your password again"
-                inputType={"password"}
-                name={"confirmPassword"}
-            />
+            {/*<Input*/}
+            {/*    register={register({*/}
+            {/*        required: {*/}
+            {/*            value: true,*/}
+            {/*            message: 'This field is required',*/}
+            {/*        },*/}
+            {/*        maxLength: {*/}
+            {/*            value: 15,*/}
+            {/*            message: 'This input exceed maxLength.',*/}
+            {/*        },*/}
+            {/*        minLength: {*/}
+            {/*            value: 2,*/}
+            {/*            message: 'This input exceed minLength.',*/}
+            {/*        }*/}
+            {/*    })}*/}
+            {/*    placeholder="Confirm password"*/}
+            {/*    label="Enter your password again"*/}
+            {/*    inputType={"password"}*/}
+            {/*    name={"confirmPassword"}*/}
+            {/*/>*/}
             <Checkbox label="I accept the agreement" />
             <ButtonWrapper>
                 <Button buttonName="Sign Up"/>

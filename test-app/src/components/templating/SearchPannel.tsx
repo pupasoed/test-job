@@ -1,18 +1,18 @@
 import React from 'react';
-import {Button} from "../ui/Button";
 import styled from "styled-components";
+import ButtonAddItem from "../../modules/templaitingModules/buttonAddItem";
 
-
-export const SearchPanel = ( {onClickHandler} ) => {
+export const SearchPanel = () => {
 
     return(
         <SearchPanelWrapper>
-            <ButtonWrapper onClick={onClickHandler}>
-                <Button buttonName={ 'Add' } />
+            <ButtonWrapper>
+                <ButtonAddItem/>
             </ButtonWrapper>
         </SearchPanelWrapper>
     )
 }
+// export default withRouter(SearchPanel)
 
 const SearchPanelWrapper = styled.div`
   margin: 32px 0;

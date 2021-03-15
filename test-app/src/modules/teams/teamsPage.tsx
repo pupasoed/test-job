@@ -16,7 +16,7 @@ import {ListItem} from "../../components/templating/ListItem";
 const TeamsPage = ({history}) => {
 
     const buttonHandler = () => {
-        history.push(`/teams/new/`)
+        // history.push(`/teams/new/`)
     }
 
     const teamClickHandler = useCallback((id) => {
@@ -42,7 +42,7 @@ const TeamsPage = ({history}) => {
     } else {
         return (
             <ListItemsFormLayout>
-                <SearchPanel onClickHandler={buttonHandler}/>
+                <SearchPanel />
                 <ListItem items={teams} itemClickHandler={teamClickHandler}/>
             </ListItemsFormLayout>
         )

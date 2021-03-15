@@ -26,10 +26,6 @@ import {SearchPanel} from "../../components/templating/SearchPannel";
 
 const PlayersPage = ({history}) => {
 
-    const buttonHandler = () => {
-        history.push(`/players/new/`)
-    }
-
     const teamClickHandler = useCallback((id) => {
         history.push(`/players/${id}`)
     }, [history])
@@ -50,7 +46,7 @@ const PlayersPage = ({history}) => {
     } else {
         return (
             <ListItemsFormLayout>
-                <SearchPanel onClickHandler={buttonHandler}/>
+                <SearchPanel />
                 <ListItem items={players} itemClickHandler={teamClickHandler} />
             </ListItemsFormLayout>
         )

@@ -4,6 +4,12 @@ interface nameInterface{
     password: string
 }
 
+interface dataSingUpInteface{
+    name: string,
+    login: string,
+    password: string
+}
+
 
 export const loginService = async (data: nameInterface) => {
     console.log(data)
@@ -11,6 +17,17 @@ export const loginService = async (data: nameInterface) => {
         method: "POST",
         body: JSON.stringify(data),
         headers: {'Content-Type': 'application/json'}})
+    return response.json()
+}
+
+
+export const signUpService = async (data: dataSingUpInteface) => {
+    console.log(data)
+    const response = await fetch(`http://dev.trainee.dex-it.ru/api/Auth/SignUp`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {'Content-Type': 'application/json'}
+    })
     return response.json()
 }
 

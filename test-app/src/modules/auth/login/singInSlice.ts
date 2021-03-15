@@ -1,6 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {loginRequested} from "./singInActions";
-import {GetToken} from '../../../components/service-context/getTokenInLokalstorage'
+import {singUpRequested} from "../singUp/singUpAction";
+// import {GetToken} from '../../../components/service-context/getTokenInLokalstorage'
 
 interface User {
     token: string,
@@ -14,23 +15,21 @@ interface AuthState {
 
 const initialState: AuthState = {
     user: localStorage.user || null,
-    loading: false,
+    loading: false
 }
 
 export const loginSlice = createSlice({
     name: "logInSlice",
     initialState: initialState,
     reducers: {
-        // returnToken(state) {
-            // const localStorageUser = localStorage.getItem('user')
-            // console.log(localStorageUser)
-            // if (localStorageUser) {
-            //     state.user = JSON.parse(localStorageUser)
-            //     console.log(state.user)
-            // }
-            // state.user = GetToken()
-            // console.log(state.user)
-        // },
+        returnUser(state) {
+            const localStorageUser = localStorage.getItem('user')
+            console.log(localStorageUser)
+            if (localStorageUser) {
+                state.user = JSON.parse(localStorageUser)
+            }
+        },
+
         logout(state) {
             state.user = null
             localStorage.clear()
@@ -43,11 +42,24 @@ export const loginSlice = createSlice({
         builder.addCase(loginRequested.fulfilled, (state, action) => {
             state.user = action.payload
             localStorage.setItem('user', JSON.stringify(state.user));
-
-            // console.log(state.user)
         })
         builder.addCase(loginRequested.rejected, (state, action) => {
             state.user = null
+            console.log(action.payload)
+        })
+
+        builder.addCase(singUpRequested.pending, (state) => {
+
+
+            state.user = null
+        })
+        builder.addCase(singUpRequested.fulfilled, (state, action) => {
+            state.user = action.payload
+            localStorage.setItem('user', JSON.stringify(state.user));
+        })
+        builder.addCase(singUpRequested.rejected, (state, action) => {
+            state.user = null
+            console.log(action.payload)
         })
     }
 })
